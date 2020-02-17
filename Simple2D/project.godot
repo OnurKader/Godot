@@ -204,7 +204,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "godot-next" )
+enabled=PoolStringArray( "godot-next", "snippets_plugin" )
 
 [input]
 
