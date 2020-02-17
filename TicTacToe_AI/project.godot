@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="TicTacToe_AI"
+config/description="A Small Tic-Tac-Toe Game *Without* An AI Component"
+run/main_scene="res://scenes/Main.tscn"
+boot_splash/bg_color=Color( 0.0705882, 0.0705882, 0.0705882, 1 )
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=720
+window/size/height=1280
+window/size/always_on_top=true
+window/size/test_width=480
+window/size/test_height=854
+window/energy_saving/keep_screen_on=false
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.329412, 0.341176, 0.352941, 1 )
+environment/default_environment="res://default_env.tres"

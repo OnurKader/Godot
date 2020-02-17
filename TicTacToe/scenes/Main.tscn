@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Interface.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Tile.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=3]
+[ext_resource path="res://assets/O.png" type="Texture" id=4]
+[ext_resource path="res://assets/X.png" type="Texture" id=5]
+
+[sub_resource type="TileSet" id=1]
+0/name = "O.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 160, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "X.png 1"
+1/texture = ExtResource( 5 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 160, 160 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_editor_description_": "Main node to hold the game and an instance to the UI scene"
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "White Background"
+}
+
+[node name="Tile" type="Sprite" parent="."]
+position = Vector2( 360, 480 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Grid Cells" type="TileMap" parent="."]
+position = Vector2( 0, 120 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 240, 240 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_tile_origin = 1
+centered_textures = true
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 0
+format = 1
+
+[node name="UI" parent="." instance=ExtResource( 1 )]
+light_mask = 0
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_right = 720.0
+margin_bottom = 1280.0
+[connection signal="game_over" from="." to="UI" method="_on_UI_game_over"]
+[connection signal="game_over" from="." to="." method="_on_game_over"]
+
+[editable path="UI"]

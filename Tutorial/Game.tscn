@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Game" type="Node2D"]
+process_priority = -2
+__meta__ = {
+"_editor_description_": "Just a simple node to learn GDScript and Godot in general
+"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 520.0
+margin_top = 335.0
+margin_right = 760.0
+margin_bottom = 385.0
+mouse_default_cursor_shape = 1
+text = "Hello There!
+My name is Beron ^_^"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
